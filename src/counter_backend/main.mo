@@ -1,5 +1,7 @@
-actor {
-  public query func greet(name : Text) : async Text {
-    return "Hello, " # name # "!";
+actor Counter{
+  stable var value =0;
+  public func init(): async Nat{
+    value += 3;
+    return value;
   };
-};
+}
